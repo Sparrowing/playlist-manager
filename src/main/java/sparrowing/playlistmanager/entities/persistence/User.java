@@ -1,25 +1,45 @@
-package sparrowing.playlistmanager.entities;
+package sparrowing.playlistmanager.entities.persistence;
 
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import sparrowing.playlistmanager.util.Functions;
 
+@Entity
+@Table(name = "users")
 public class User {
 	
 	/*
 	 * int userId - Unique user ID number
 	 * String username - User's username
+	 * String passwordHash - BCrypt-hashed String of user's password
 	 * Date dateTimeJoined - Time object of when the user first was created
 	 */
 	
+	@Id @GeneratedValue @NotNull
+	@Column(name = "user_id", unique = true)
 	private int userId;
 	
+	@NotNull
+	@Column(name = "username", unique = true)
 	private String username;
 	
+	@NotNull
+	@Column(name = "password_hash")
 	private String passwordHash;
 	
+	@Temporal(TemporalType.TIMESTAMP) @NotNull
+	@Column(name = "date_time_joined")
 	private Date dateTimeJoined;
 	
 	// Password encoder
