@@ -6,35 +6,23 @@
 <head th:fragment="page-head">
 
 	<title>Your Playlist Manager</title>
-
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	
 </head>
 
-
-
-<!-- NAVBAR TEMPLATE -->
-<nav th:fragment="navbar" class="navbar navbar-default">
-
-	<div class="container-fluid">
+<!-- HEADER TEMPLATE -->
+<header th:fragment="page-header">
 	
-		<div class="navbar-header">
-			<a href="/" class="navbar-brand">Playlist Manager</a>
-		</div>
-		
-		<ul class="nav navbar-nav">
-			<li><a href="/">Home</a></li>
-		</ul>
-		
-		<ul class="nav navbar-nav navbar-right">
-			<li>
-				<p class="navbar-text">Username Here</p>
-			</li>
-		</ul>
+	<h1>Playlist Manager</h1>
 	
-	</div>
-
-</nav>
+	<nav>
+		
+		<a href="/">Home</a> | 
+		<a href="/u/register">Register</a> | 
+		<a href="/u/login">Log In</a> | 
+		<a href="/u/logout">Log Out</a>
+		
+	</nav>
+	
+</header>
 
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org/">
+
+	<head th:replace="frame :: page-head"></head>
+	
+	<body>
+	
+		<header th:replace="frame :: page-header"></header>
+		
+		<form action="/u/register" method="POST">
+		
+			<label for="username">Username</label>
+			<input type="text" name="username" th:value="${username?}" />
+			
+			<br />
+			
+			<label for="password">Password</label>
+			<input type="password" name="password" />
+			
+			<br />
+			
+			<label for="verify">Verify Password</label>
+			<input type="password" name="verify" />
+		
+		</form>
+	
+	</body>
+
+</html>
